@@ -19,6 +19,10 @@ app.use(cors());
 app.use("/shift", shiftRoutes);
 const PORT = process.env.PORT || 5000;
 
+app.get("/", (req,res) => {
+  res.send("Server is running !")
+})
+
 mongoose
   .connect(process.env.CONNECTION_URL, {
     useNewUrlParser: true,
